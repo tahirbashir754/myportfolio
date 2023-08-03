@@ -2,7 +2,10 @@ from django.db import models
 
 # Create your models here.
 class tahir(models.model):
-  name = model.CharField(max-length=15)
-  contact = model.IntegerField(max-length=12)
-  email = model.EmailField()
+  Full Name = model.CharField(max-length=15)
+  Email Adress = model.EmailField()
+  Mobile Number = model.IntegerField(max-length=12)
+  Email Subject = model.CharField()
+  Your Message  = model.CharField()
+  
   
