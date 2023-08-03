@@ -166,6 +166,40 @@
                 })
                 .catch(error => console.error('Error!', error.message))
             })
+
+            const form = document.querySelector('form[name="submit-to-google-sheet"]');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault(); // Prevent the default form submission behavior
+
+  // Call a function to handle form submission
+  handleFormSubmission();
+});
+
+function handleFormSubmission() {
+  const formData = new FormData(form);
+  const url = 'your-server-endpoint-url'; // Replace with the actual server endpoint URL
+
+  fetch(url, {
+    method: 'POST',
+    body: formData,
+  })
+    .then((response) => {
+      if (response.ok) {
+        // The form was successfully submitted
+        document.getElementById('msg').textContent = 'Message sent successfully!';
+        form.reset(); // Optionally, reset the form after successful submission
+      } else {
+        // Handle error when form submission fails
+        document.getElementById('msg').textContent = 'Error sending message. Please try again.';
+      }
+    })
+    .catch((error) => {
+      // Handle any network errors
+      document.getElementById('msg').textContent = 'Error sending message. Please try again later.';
+      console.error('Form submission error:', error);
+    });
+}
             
           </script>
         
