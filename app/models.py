@@ -1,14 +1,11 @@
 from django.db import models
 
-# Create your models here.
-class tahir(models.model):
-  Full Name = model.CharField(max-length=50)
-  Email Adress = model.EmailField(max-length=30)
-  Mobile Number = model.IntegerField(max-length=12)
-  Email Subject = model.CharField(max-length=100)
-  Your Message  = model.CharField(max-length=100)
+class ContactMessage(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    mobile_number = models.CharField(max_length=15)
+    subject = models.CharField(max_length=200)
+    message = models.TextField()
 
- def __str__(self):
+    def __str__(self):
         return self.name
-  
-  
