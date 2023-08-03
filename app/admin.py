@@ -1,8 +1,4 @@
 from django.contrib import admin
-from .models import tahir
+from .models import ContactMessage
 
-# Register your models here.
-
-admin.site.register(tahir)
-
-
+admin.site.register(ContactMessage)
